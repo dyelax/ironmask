@@ -1,12 +1,7 @@
+from button_control import button_is_pressed, cleanup
 from audio_control import record
 from wit_control import get_wit_response
 from servo_control import mask_on, mask_off
-import RPi.GPIO as GPIO
-
-# button setup
-BUTTON_PIN = 18
-GPIO.setmode(GPIO.BOARD)
-GPIO.setup(BUTTON_PIN, GPIO.IN, pull_up_down=GPIO.PUD_DOWN) # initial value  = off
 
 def act_on_wit_response(res):
   entities = res['entities']
@@ -21,8 +16,6 @@ def act_on_wit_response(res):
       print('off')
       mask_off()
 
-def button_is_pressed():
-  return (GPIO.input(BUTTON_PIN) == GPIO.HIGH)
 
 if __name__ == '__main__':
   try:
@@ -38,4 +31,4 @@ if __name__ == '__main__':
         # act_on_wit_response(res)
         print(res)
   except KeyboardInterrupt:
-    GPIO.cleanup()
+    cleanup()
