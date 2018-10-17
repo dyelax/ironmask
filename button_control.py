@@ -6,15 +6,20 @@ BUTTON_PIN = 18
 GPIO.setmode(GPIO.BOARD)
 GPIO.setup(BUTTON_PIN, GPIO.IN, pull_up_down=GPIO.PUD_DOWN) # initial value  = off
 
-
 def button_is_pressed():
 	return (GPIO.input(BUTTON_PIN) == GPIO.HIGH)
 	
 try:
+	last_state = GPIO.LOW
+	
 	while True:
-		if GPIO.input(BUTTON_PIN) == GPIO.HIGH:
+		current_state = GPIO.input(BUTTON_PIN)
+		
+		if current_state == GPIO.HIGH and last_state == GPIO.LOW:
 			print(button_is_pressed())
 			print("BUTTON PUUUUUUUSHHHHH!!!!!!!!!!")
+		
+		last_state = current_state
 except KeyboardInterrupt:
 	GPIO.cleanup()
 
