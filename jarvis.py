@@ -1,5 +1,7 @@
+from audio_control import record
 from wit_control import get_wit_response
-from servo_control import *
+from servo_control import mask_on, mask_off
+
 
 def act_on_wit_response(res):
   entities = res['entities']
@@ -16,23 +18,9 @@ def act_on_wit_response(res):
 
 
 if __name__ == '__main__':
-  from time import sleep
-
-  res = get_wit_response('test-audio/close-mask.mp3')
+  # TODO: fix "Input overflowed"
+  audio_path = record('/tmp/ironmask.wav')
+  # res = get_wit_response(audio_path)
+  res = get_wit_response('/tmp/ironmask.wav')
   print(res)
-  act_on_wit_response(res)
-  sleep(1)
-
-  res = get_wit_response('test-audio/open-mask.mp3')
-  print(res)
-  act_on_wit_response(res)
-  sleep(1)
-
-  res = get_wit_response('test-audio/close-mask-verbose.mp3')
-  print(res)
-  act_on_wit_response(res)
-  sleep(1)
-
-  res = get_wit_response('test-audio/open-mask-verbose.mp3')
-  print(res)
-  act_on_wit_response(res)
+  # act_on_wit_response(res)
