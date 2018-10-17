@@ -6,9 +6,10 @@ BUTTON_PIN = 22
 GPIO.setmode(GPIO.BOARD)
 GPIO.setup(BUTTON_PIN, GPIO.IN, pull_up_down=GPIO.PUD_DOWN) # initial value  = off
 
-def button_callback:
-	print("BUTTON PUUUUUUUSHHHHH!!!!!!!!!!")
-
-GPIO.add_event_detect(BUTTON_PIN, GPIO.RISING, callback=button_callback)
-
-GPIO.cleanup()
+try:
+	while True:
+		if GPIO.input(BUTTON_PIN) == GPIO.HIGH:
+			print("BUTTON PUUUUUUUSHHHHH!!!!!!!!!!")
+except KeyboardInterrupt:
+	p.stop()
+	GPIO.cleanup()
