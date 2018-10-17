@@ -28,8 +28,8 @@ def servo_test():
 
 def mask_off():
 	try:
-		for x in range(5, 10, 0.5):
-			p.ChangeDutyCycle(x)
+		for x in range(10, 20, 1):
+			p.ChangeDutyCycle(x/2.0)
 			time.sleep(0.03)
 	except KeyboardInterrupt:
 		p.stop()
@@ -37,8 +37,8 @@ def mask_off():
 
 def mask_on():
 	try:
-		for x in range(10, 5, -0.5):
-			p.ChangeDutyCycle(x)
+		for x in range(20, 10, -1):
+			p.ChangeDutyCycle(x/2.0)
 			time.sleep(0.03)
 	except KeyboardInterrupt:
 		p.stop()
