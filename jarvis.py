@@ -16,6 +16,23 @@ def act_on_wit_response(res):
 
 
 if __name__ == '__main__':
+  from time import sleep
+
   res = get_wit_response('test-audio/close-mask.mp3')
+  print(res)
+  act_on_wit_response(res)
+  sleep(1)
+
+  res = get_wit_response('test-audio/open-mask.mp3')
+  print(res)
+  act_on_wit_response(res)
+  sleep(1)
+
+  res = get_wit_response('test-audio/close-mask-verbose.mp3')
+  print(res)
+  act_on_wit_response(res)
+  sleep(1)
+
+  res = get_wit_response('test-audio/open-mask-verbose.mp3')
   print(res)
   act_on_wit_response(res)
