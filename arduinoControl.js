@@ -1,7 +1,11 @@
 openMask = () => {
-    // TODO (sol): Send open mask arduino commands
+	$.post("/MASK=OPEN", function(data, status){
+        alert("Data: " + data + "\nStatus: " + status);
+    });
 }
 
 closeMask = () => {
-    // TODO (sol): Send close mask arduino commands
+    $.post("/MASK=CLOSED", function(data, status){
+        alert("Data: " + data + "\nStatus: " + status);
+    });
 }
