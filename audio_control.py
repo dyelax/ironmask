@@ -6,7 +6,8 @@ p = pyaudio.PyAudio()
 CHUNK = 1024
 FORMAT = pyaudio.paInt16
 CHANNELS = 2
-RATE = int(p.get_device_info_by_index(0)['defaultSampleRate'])
+# RATE = int(p.get_device_info_by_index(0)['defaultSampleRate'])
+RATE = 48000
 
 stream = p.open(format=FORMAT,
                 channels=CHANNELS,
