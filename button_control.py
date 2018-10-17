@@ -10,11 +10,14 @@ GPIO.setup(BUTTON_PIN, GPIO.IN, pull_up_down=GPIO.PUD_DOWN) # initial value  = o
 def button_is_pressed():
 	return (GPIO.input(BUTTON_PIN) == GPIO.HIGH)
 	
-def button_callback(channel):
-	print(button_is_pressed())
-	print("BUTTON PUUUUUUUSHHHHH!!!!!!!!!!")
-	
-GPIO.add_event_detect(BUTTON_PIN, GPIO.RISING, callback=button_callback)
+try:
+	while True:
+		if GPIO.input(BUTTON_PIN) == GPIO.HIGH:
+			print(button_is_pressed())
+			print("BUTTON PUUUUUUUSHHHHH!!!!!!!!!!")
+except KeyboardInterrupt:
+	GPIO.cleanup()
+
 print(button_is_pressed())
 
 
