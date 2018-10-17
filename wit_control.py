@@ -1,4 +1,4 @@
-from wit_control import Wit
+from wit import Wit
 from pydub import AudioSegment
 import os
 
