@@ -1,12 +1,12 @@
 import pyaudio
 import wave
 
+p = pyaudio.PyAudio()
+
 CHUNK = 1024
 FORMAT = pyaudio.paInt16
 CHANNELS = 2
-RATE = 44100
-
-p = pyaudio.PyAudio()
+RATE = int(p.get_device_info_by_index(0)['defaultSampleRate'])
 
 stream = p.open(format=FORMAT,
                 channels=CHANNELS,
