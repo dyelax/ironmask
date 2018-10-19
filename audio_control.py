@@ -22,7 +22,7 @@ def record(output_path='/tmp/ironmask.wav'):
   frames = []
   # while button_is_pressed():  # TODO: change back to button once implemented
   for i in range(0, int(RATE / CHUNK * 5)):
-    data = stream.read(CHUNK)
+    data = stream.read(CHUNK, exception_on_overflow=False)
     frames.append(data)
 
   print("* done recording")
