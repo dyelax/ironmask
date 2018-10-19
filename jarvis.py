@@ -26,9 +26,9 @@ if __name__ == '__main__':
         print("button pressed")
 
         audio_path = record()
-        # res = get_wit_response(audio_path)
-        # print(res)
-        # act_on_wit_response(res)
+        res = get_wit_response(audio_path)
+        print(res)
+        act_on_wit_response(res)
 
         break
   except KeyboardInterrupt:
