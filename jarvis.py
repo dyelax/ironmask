@@ -30,11 +30,5 @@ if __name__ == '__main__':
         print(res)
         act_on_wit_response(res)
 
-        break
   except KeyboardInterrupt:
     cleanup()
-
-  # audio_path = record()
-  # res = get_wit_response(audio_path)
-  # print(res)
-  # act_on_wit_response(res)
