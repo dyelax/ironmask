@@ -5,17 +5,20 @@ from servo_control import mask_on, mask_off
 
 
 def act_on_wit_response(res):
-  entities = res['entities']
+  try:
+    entities = res['entities']
 
-  # determine if mask on/off and act
-  # TODO: play with confidence levels
-  if any(x for x in entities['intent'] if (x['value'] == 'mask' and x['confidence'] > 0.9)):
-    if any(x for x in entities['on_off'] if (x['value'] == 'on' and x['confidence'] > 0.5)):
-      print('on')
-      mask_on()
-    elif any(x for x in entities['on_off'] if (x['value'] == 'off' and x['confidence'] > 0.5)):
-      print('off')
-      mask_off()
+    # determine if mask on/off and act
+    # TODO: play with confidence levels
+    if any(x for x in entities['intent'] if (x['value'] == 'mask')):
+      if any(x for x in entities['on_off'] if (x['value'] == 'on')):
+        print('on')
+        mask_on()
+      elif any(x for x in entities['on_off'] if (x['value'] == 'off')):
+        print('off')
+        mask_off()
+  except KeyError:
+    print('Bad response. Try again.')
 
 
 if __name__ == '__main__':
