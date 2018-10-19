@@ -30,7 +30,7 @@ def record(output_path='/tmp/ironmask.wav'):
 
   stream.stop_stream()
   stream.close()
-  p.terminate()
+  # p.terminate()
 
   wf = wave.open(output_path, 'wb')
   wf.setnchannels(CHANNELS)
