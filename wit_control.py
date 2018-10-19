@@ -21,9 +21,8 @@ def get_wit_response(audio_path='test-audio/close-mask-verbose.mp3'):
     if orig_ext == '.mp3':
       res = wit_mp3(f)
     else:
-      orig_path = '/tmp/ironmask' + orig_ext
       mp3_path = '/tmp/ironmask.mp3'
-      to_mp3(orig_path, mp3_path)
+      to_mp3(audio_path, mp3_path)
 
       with open(mp3_path, 'rb') as f:
         res = wit_mp3(f)
