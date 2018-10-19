@@ -11,14 +11,13 @@ CHANNELS = 1
 RATE = int(p.get_device_info_by_index(0)['defaultSampleRate'])
 
 
-stream = p.open(format=FORMAT,
-                channels=CHANNELS,
-                rate=RATE,
-                input=True,
-                frames_per_buffer=CHUNK)
-
-
 def record(output_path='/tmp/ironmask.wav'):
+  stream = p.open(format=FORMAT,
+                  channels=CHANNELS,
+                  rate=RATE,
+                  input=True,
+                  frames_per_buffer=CHUNK)
+
   print("* start recording")
 
   frames = []
