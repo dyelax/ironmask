@@ -1,6 +1,8 @@
 import pyaudio
 import wave
 
+from button_control import button_is_pressed
+
 p = pyaudio.PyAudio()
 
 CHUNK = 1024
@@ -20,8 +22,8 @@ def record(output_path='/tmp/ironmask.wav'):
   print("* start recording")
 
   frames = []
-  # while button_is_pressed():  # TODO: change back to button once implemented
-  for i in range(0, int(RATE / CHUNK * 5)):
+  while button_is_pressed():
+  # for i in range(0, int(RATE / CHUNK * 5)):
     data = stream.read(CHUNK, exception_on_overflow=False)
     frames.append(data)
 

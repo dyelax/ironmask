@@ -6,7 +6,7 @@ GPIO.setup(BUTTON_PIN, GPIO.IN, pull_up_down=GPIO.PUD_DOWN) # initial value  = o
 
 
 def button_is_pressed():
-  return (GPIO.input(BUTTON_PIN) == GPIO.HIGH)
+  return GPIO.input(BUTTON_PIN) == GPIO.HIGH
 
 
 def cleanup():
