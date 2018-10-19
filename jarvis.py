@@ -21,14 +21,13 @@ def act_on_wit_response(res):
 if __name__ == '__main__':
   try:
     while True:
-	  # if button is pressed
       if button_is_pressed():
         print("button pressed")
 
         audio_path = record()
-        # res = get_wit_response(audio_path)
-        # print(res)
-        # act_on_wit_response(res)
+        res = get_wit_response(audio_path)
+        print(res)
+        act_on_wit_response(res)
 
   except KeyboardInterrupt:
     cleanup()
