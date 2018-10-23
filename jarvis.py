@@ -1,7 +1,7 @@
 from audio_control import record
 from wit_control import get_wit_response
 from button_control import button_is_pressed, cleanup
-from servo_control import mask_on, mask_off
+from servo_control import open_mask, close_mask
 
 
 def act_on_wit_response(res):
@@ -11,10 +11,10 @@ def act_on_wit_response(res):
     if any(x for x in entities['intent'] if (x['value'] == 'mask')):
       if any(x for x in entities['on_off'] if (x['value'] == 'on')):
         print('on')
-        mask_on()
+        open_mask()
       elif any(x for x in entities['on_off'] if (x['value'] == 'off')):
         print('off')
-        mask_off()
+        close_mask()
   except KeyError:
     print('Bad response. Try again.')
 

@@ -22,7 +22,7 @@ def record(output_path='/tmp/ironmask.wav'):
 
   frames = []
   while button_is_pressed():
-  # for i in range(0, int(RATE / CHUNK * 5)):
+    # for i in range(0, int(RATE / CHUNK * 5)):
     data = stream.read(CHUNK, exception_on_overflow=False)
     frames.append(data)
 
@@ -43,4 +43,4 @@ def record(output_path='/tmp/ironmask.wav'):
 
 
 if __name__ == '__main__':
-    record()
+  record()
