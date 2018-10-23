@@ -5,7 +5,7 @@ SERVO_PIN = 22
 GPIO.setmode(GPIO.BOARD)
 GPIO.setup(SERVO_PIN, GPIO.OUT)
 
-p = GPIO.PWM(SERVO_PIN, 50)  # GPIO 17 for PWM with 50Hz
+p = GPIO.PWM(SERVO_PIN, 50)  # GPIO 22 for PWM with 50Hz
 p.start(2.5)  # Initialization
 
 # duty cycle for 0 degree = (1/20)*100 = 5%
