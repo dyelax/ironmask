@@ -8,11 +8,12 @@ if __name__ == '__main__':
   try:
     while True:
       if button_is_pressed():
-        print("button pressed")
         if toggle_ready:
           if mask_open:
+            print("close mask")
             close_mask()
           else:
+            print("open mask")
             open_mask()
 
         toggle_ready = False
