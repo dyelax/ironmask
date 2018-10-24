@@ -23,7 +23,7 @@ DC_MASK_OPEN = 2.5
 DC_MASK_CLOSE = 12.5
 # DC_MASK_OPEN = 5
 # DC_MASK_CLOSE = 8
-SLEEP_TIME = 0.03
+SLEEP_TIME = 0.09
 
 
 def servo_test():
@@ -40,10 +40,10 @@ def servo_test():
     while True:
       print('open')
       open_mask()
-      time.sleep(1)
+      time.sleep(3)
       print('close')
       close_mask()
-      time.sleep(1)
+      time.sleep(3)
   except KeyboardInterrupt:
     p.stop()
     GPIO.cleanup()
