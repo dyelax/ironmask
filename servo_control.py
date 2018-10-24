@@ -36,8 +36,10 @@ def servo_test():
     #     time.sleep(0.03)
 
     while True:
+      print('open')
       open_mask()
       time.sleep(1)
+      print('close')
       close_mask()
       time.sleep(1)
   except KeyboardInterrupt:
