@@ -5,8 +5,8 @@ mask_open = False
 toggle_ready = True
 
 if __name__ == '__main__':
-  servo_test()
-
+  # servo_test()
+  close_mask()
 
   # try:
   #   while True:
