@@ -22,7 +22,8 @@ DC_MASK_CLOSE = 12.5
 SLEEP_TIME = 0.09
 
 p = GPIO.PWM(SERVO_PIN, 50)  # GPIO 22 for PWM with 50Hz
-p.start(DC_MASK_CLOSE)  # Initialization
+# p.start(DC_MASK_CLOSE)  # Initialization
+p.start(DC_MASK_OPEN)  # Initialization
 
 
 def servo_test():
