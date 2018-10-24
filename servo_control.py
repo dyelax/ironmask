@@ -5,8 +5,6 @@ SERVO_PIN = 22
 GPIO.setmode(GPIO.BOARD)
 GPIO.setup(SERVO_PIN, GPIO.OUT)
 
-p = GPIO.PWM(SERVO_PIN, 50)  # GPIO 22 for PWM with 50Hz
-p.start(2.5)  # Initialization
 
 # duty cycle for 0 degree = (1/20)*100 = 5%
 # duty cycle for 90 degree = (1.5/20)*100 = 7.5%
@@ -24,6 +22,9 @@ DC_MASK_CLOSE = 12.5
 # DC_MASK_OPEN = 5
 # DC_MASK_CLOSE = 8
 SLEEP_TIME = 0.09
+
+p = GPIO.PWM(SERVO_PIN, 50)  # GPIO 22 for PWM with 50Hz
+p.start(DC_MASK_CLOSE)  # Initialization
 
 
 def servo_test():
