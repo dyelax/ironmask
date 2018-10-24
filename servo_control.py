@@ -49,8 +49,8 @@ def close_mask():
 
 def move_mask(start_dc, end_dc, step=1):
   try:
-    for dc in range(start_dc, end_dc, step):
-      p.ChangeDutyCycle(dc)
+    for dc in range(int(start_dc * 2), int(end_dc * 2), step * 2):
+      p.ChangeDutyCycle(dc // 2)
       time.sleep(SLEEP_TIME)
   except KeyboardInterrupt:
     p.stop()
