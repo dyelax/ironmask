@@ -1,7 +1,7 @@
 from button_control import button_is_pressed, cleanup
 from servo_control import open_mask, close_mask
 
-mask_open = False
+mask_open = True
 toggle_ready = True
 
 if __name__ == '__main__':
