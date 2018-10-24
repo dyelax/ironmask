@@ -26,14 +26,20 @@ SLEEP_TIME = 0.03
 
 def servo_test():
   try:
-    while True:
-      for x in range(10, 20, 1):
-        p.ChangeDutyCycle(x / 2.0)
-        time.sleep(0.03)
+    # while True:
+    #   for x in range(10, 20, 1):
+    #     p.ChangeDutyCycle(x / 2.0)
+    #     time.sleep(0.03)
+    #
+    #   for x in range(20, 10, -1):
+    #     p.ChangeDutyCycle(x / 2.0)
+    #     time.sleep(0.03)
 
-      for x in range(20, 10, -1):
-        p.ChangeDutyCycle(x / 2.0)
-        time.sleep(0.03)
+    while True:
+      open_mask()
+      time.sleep(1)
+      close_mask()
+      time.sleep(1)
   except KeyboardInterrupt:
     p.stop()
     GPIO.cleanup()

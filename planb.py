@@ -5,23 +5,25 @@ mask_open = False
 toggle_ready = True
 
 if __name__ == '__main__':
-  # servo_test()
-  try:
-    while True:
-      if button_is_pressed():
-        if toggle_ready:
-          if mask_open:
-            print("close mask")
-            close_mask()
-            mask_open = False
-          else:
-            print("open mask")
-            open_mask()
-            mask_open = True
+  servo_test()
 
-        toggle_ready = False
-      else:
-        toggle_ready = True
 
-  except KeyboardInterrupt:
-    cleanup()
+  # try:
+  #   while True:
+  #     if button_is_pressed():
+  #       if toggle_ready:
+  #         if mask_open:
+  #           print("close mask")
+  #           close_mask()
+  #           mask_open = False
+  #         else:
+  #           print("open mask")
+  #           open_mask()
+  #           mask_open = True
+  #
+  #       toggle_ready = False
+  #     else:
+  #       toggle_ready = True
+  #
+  # except KeyboardInterrupt:
+  #   cleanup()
