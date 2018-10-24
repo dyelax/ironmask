@@ -12,9 +12,11 @@ if __name__ == '__main__':
           if mask_open:
             print("close mask")
             close_mask()
+            mask_open = False
           else:
             print("open mask")
             open_mask()
+            mask_open = True
 
         toggle_ready = False
       else:
